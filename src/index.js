@@ -8,18 +8,18 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 const feedback = ( state = {}, action ) => {
-
-}
+    return state;
+};
 
 const store = createStore(
     combineReducers({
-
+        feedback: feedback
     }),
     applyMiddleware(logger)
 );
 
 ReactDOM.render(
-    <Provider>
+    <Provider store = {store}>
         <App />
     </Provider>, document.getElementById('root'));
 
