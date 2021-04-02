@@ -7,8 +7,10 @@ const Form = (props) => {
             <h2>{props.header}</h2>
             <label>{props.type}</label>
             <input type = 'number'></input>
-            <button>Next</button>
-            {props.backButton ? <button>Back</button> : '' }
+            <Link to = {props.next}>
+                <button>Next</button>
+            </Link>
+            {props.backButton ? <Link to = { props.back }><button>Back</button></Link> : '' }
         </>
     )
 }

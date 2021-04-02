@@ -11,22 +11,22 @@ const Routes = () => {
     return (
         <>
             <Router>
-                <Route path = '/'>
+                <Route path = '/' exact>
                     <Feeling />
                 </Route>
-                <Route path = '/understanding'>
+                <Route path = '/understanding' exact>
                     <Understanding />
                 </Route>
-                <Route path = '/supported'>
+                <Route path = '/supported' exact>
                     <Supported />
                 </Route>
-                <Route path = '/comments'>
+                <Route path = '/comments' exact>
                     <Comments />
                 </Route>
-                <Route path = '/review'>
+                <Route path = '/review' exact>
                     <Review />
                 </Route>
-                <Route path = '/admin'>
+                <Route path = '/admin' exact>
                     <Admin />
                 </Route>
             </Router> 
