@@ -26,7 +26,6 @@ if (process.env.DATABASE_URL) {
     };
 
 } else {
-    // only change the things on the right side of the ||
     config = {
         user: process.env.PG_USER || null, //env var: PGUSER
         password: process.env.DATABASE_SECRET || null, //env var: PGPASSWORD
