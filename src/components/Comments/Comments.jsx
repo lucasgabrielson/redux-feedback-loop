@@ -2,9 +2,10 @@ import React from 'react'
 
 const Comments = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header />
+            <Form type = {'Comments'} backButton = {true} header = {'Any comments you want to leave?'} next = {'review'}/>
+        </>
     )
 }
 

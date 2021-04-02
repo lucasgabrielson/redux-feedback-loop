@@ -2,9 +2,10 @@ import React from 'react'
 
 const Review = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <h2>Review Your Feedback</h2>
+            <button>Back</button>
+        </>
     )
 }
 

@@ -2,9 +2,10 @@ import React from 'react'
 
 const Understanding = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header />
+            <Form type = {'Understanding?'} backButton = {true} header = {'How well are you understanding the content?'} next = {'supported'} back = {'feeling'}/>
+        </>
     )
 }
 
