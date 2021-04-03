@@ -20,6 +20,9 @@ const feedback = ( state = {}, action ) => {
     if( action.type === 'Comments' ) {
         state = {...state, comments: action.payload };
     }
+    if( action.type === 'clearFeedback' ) {
+        state = {};
+    }
     return state;
 };
 
