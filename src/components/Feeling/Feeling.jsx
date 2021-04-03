@@ -5,7 +5,7 @@ const Feeling = () => {
     return (
         <div>
             <Header />
-            <Form type = {'Feeling?'} backButton = {false} header = {'How are you feeling today?'} next = {'/understanding'} property = { 'feeling'}/>
+            <Form type = {'Feeling?'} backButton = {false} header = {'How are you feeling today?'} next = {'/understanding'} />
         </div>
     )
 }

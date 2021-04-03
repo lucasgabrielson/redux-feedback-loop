@@ -8,8 +8,17 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 const feedback = ( state = {}, action ) => {
-    if( action.type === 'feeling' ) {
+    if( action.type === 'Feeling?' ) {
         state = {...state, feeling: action.payload };
+    }
+    if( action.type === 'Understanding?' ) {
+        state = {...state, understanding: action.payload };
+    }
+    if( action.type === 'Support?' ) {
+        state = {...state, support: action.payload };
+    }
+    if( action.type === 'Comments' ) {
+        state = {...state, comments: action.payload };
     }
     return state;
 };

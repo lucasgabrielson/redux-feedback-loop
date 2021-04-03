@@ -15,7 +15,7 @@ const Form = (props) => {
 
     const dispatchToRedux = () => {
         console.log( 'in dispatchToRedux' );
-        dispatch( { type: props.property, payload: feedback })
+        dispatch( { type: props.type, payload: feedback })
     }
 
     return (
