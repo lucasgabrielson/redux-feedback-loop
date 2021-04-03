@@ -6,7 +6,7 @@ const Supported = () => {
     return (
         <>
             <Header />
-            <Form type = {'Support?'} backButton = {true} header = {'How well are you being supported?'} next = {'/comments'} back = {'/understanding'}/>
+            <Form type = {'Support?'} backButton = {true} header = {'How well are you being supported?'} next = {'/comments'} back = {'/understanding'} input = {'number'}/>
         </>
     )
 }
