@@ -15,4 +15,16 @@ router.get( '/', ( req, res ) => {
         })
 })
 
+router.post( '/', ( req, res ) => {
+    console.log( 'POST /api/feedback', req.body, req.body.feeling );
+    let sqlText = 'INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4)';
+    pool.query( sqlText, [ Number(req.body.feeling), Number(req.body.understanding), Number(req.body.support), req.body.comments])
+        .then( results => {
+            res.sendStatus( 200 );
+        }).catch( err => {
+            console.log( 'Error inserting into database,', sqlText);
+            res.sendStatus( 500 );
+        })
+})
+
 module.exports = router;

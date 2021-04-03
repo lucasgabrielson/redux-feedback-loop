@@ -24,13 +24,13 @@ const Form = (props) => {
             <h2>{props.header}</h2>
             <label>{props.type}</label>
             {props.input === 'number' ? 
-                <select onChange = { handleChange }>
-                    <option value = '' selected disabled hidden>Choose here</option>
-                    <option value = '1'>1</option>
-                    <option value = '2'>2</option>
-                    <option value = '3'>3</option>
-                    <option value = '4'>4</option>
-                    <option value = '5'>5</option>
+                <select defaultValue={'DEFAULT'} onChange = { handleChange }>
+                <option value = 'DEFAULT' disabled >Choose here</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select> : 
                 <input type = {props.input} onChange = {handleChange}></input> }
             <Link to = {props.next}>
