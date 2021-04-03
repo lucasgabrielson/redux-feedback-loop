@@ -8,6 +8,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 const feedback = ( state = {}, action ) => {
+    if( action.type === 'feeling' ) {
+        state = {...state, feeling: action.payload };
+    }
     return state;
 };
 
