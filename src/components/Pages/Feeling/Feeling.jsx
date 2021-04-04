@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../Header/Header';
 import RatingCard from '../../Cards/RatingCard';
-import NavBar from '../../NavBar/NavBar'
+import NavBar from '../../NavBar/NavBar';
 
 const Feeling = () => {
     return (

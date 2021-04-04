@@ -7,13 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link, useHistory } from 'react-router-dom';
-import {useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import swal from 'sweetalert';
 // import 'fontsource-roboto';
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: '#BBA27D',
+        backgroundColor: '#16C1DE',
         marginTop: 40,
         margin: 'auto',
         minWidth: 275,
@@ -65,8 +65,20 @@ const ReviewCard = () => {
             <Card variant="outlined" className={classes.root}>
                 <CardContent>
                     <Typography variant="h4" component="p">
-                    Thank you for the feedback!
+                    Review Your Feedback
                     <br />
+                    </Typography>
+                </CardContent>
+                <CardContent>
+                    <Typography variant="h4" component="p">
+                        Feelings: {feedback.feeling}
+                        <br />
+                        Understanding: {feedback.understanding}
+                        <br />
+                        Support: {feedback.support}
+                        <br />
+                        Comments: {feedback.comments}
+                        <br />
                     </Typography>
                 </CardContent>
                 <CardActions>

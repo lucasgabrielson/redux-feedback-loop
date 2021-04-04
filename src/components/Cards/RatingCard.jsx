@@ -17,15 +17,18 @@ const useStyles = makeStyles({
     },
     card: {
         display: 'flex',
-        flexWrap: 'wrap',
+        // flexWrap: 'wrap',
         alignContent: 'space-around',
         justifyContent: 'center',
-        backgroundColor: '#f2a154',
+        backgroundColor: '#16C1DE',
         textAlign: 'center',
         marginTop: 20,
         marginLeft: 60,
         marginRight: 60,
         minHeight: 250,
+        borderRadius: 4,
+        text: 'white' 
+
     },
     title: {
 

@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         flexWrap: 'wrap',
         alignContent: 'space-around',
         justifyContent: 'center',
-        backgroundColor: '#BBA27D',
+        backgroundColor: '#16C1DE',
         textAlign: 'center',
         marginTop: 20,
         marginLeft: 60,

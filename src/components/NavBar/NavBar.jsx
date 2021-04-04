@@ -41,7 +41,7 @@ const NavBar = () => {
                         <Dropdown.Menu>
                             <Dropdown.Item href="#/">Feelings</Dropdown.Item>
                             <Dropdown.Item href="#/understanding">Understanding</Dropdown.Item>
-                            <Dropdown.Item href="#/support">Support</Dropdown.Item>
+                            <Dropdown.Item href="#/supported">Support</Dropdown.Item>
                             <Dropdown.Item href="#/comments">Comments</Dropdown.Item>
                             <Dropdown.Item href="#/review">Review</Dropdown.Item>
                         </Dropdown.Menu>
