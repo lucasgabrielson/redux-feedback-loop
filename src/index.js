@@ -7,17 +7,18 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
+
 const feedback = ( state = {}, action ) => {
-    if( action.type === 'Feeling?' ) {
+    if( action.type === 'feeling' ) {
         state = {...state, feeling: action.payload };
     }
-    if( action.type === 'Understanding?' ) {
+    if( action.type === 'understanding' ) {
         state = {...state, understanding: action.payload };
     }
-    if( action.type === 'Support?' ) {
+    if( action.type === 'support' ) {
         state = {...state, support: action.payload };
     }
-    if( action.type === 'Comments' ) {
+    if( action.type === 'comments' ) {
         state = {...state, comments: action.payload };
     }
     if( action.type === 'clearFeedback' ) {
@@ -26,19 +27,17 @@ const feedback = ( state = {}, action ) => {
     return state;
 };
 
-const allFeedback = ( state = [], action ) => {
-    if( action.type = 'addFeedbackData' ) {
+const adminFeedback = ( state = [], action ) => {
+    if( action.type = 'addAdminFeedback' ) {
         state = [...state, action.payload];
     }
     return state;
 }
 
-
-
 const store = createStore(
     combineReducers({
         feedback: feedback,
-        allFeedback: allFeedback
+        adminFeedback: adminFeedback,
     }),
     applyMiddleware(logger)
 );

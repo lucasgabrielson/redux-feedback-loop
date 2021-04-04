@@ -1,11 +1,11 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Feeling from '../Feeling/Feeling';
-import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
-import Comments from '../Comments/Comments';
-import Review from '../Review/Review';
-import Admin from '../Admin/Admin';
+import Feeling from '../Pages/Feeling/Feeling';
+import Understanding from '../Pages/Understanding/Understanding';
+import Supported from '../Pages/Supported/Supported';
+import Comments from '../Pages/Comments/Comments';
+import Review from '../Pages/Review/Review';
+import Admin from '../Pages/Admin/Admin';
 
 const Routes = () => {
     return (
