@@ -48,9 +48,9 @@ const NavBar = () => {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item href="#/">Feelings</Dropdown.Item>
-                            <Dropdown.Item href="#/understanding">Understanding</Dropdown.Item>
-                            <Dropdown.Item href="#/supported">Support</Dropdown.Item>
-                            <Dropdown.Item href="#/comments">Comments</Dropdown.Item>
+                            { feedback.feeling ? <Dropdown.Item href="#/understanding">Understanding</Dropdown.Item> : '' }
+                            { feedback.feeling && feedback.understanding ? <Dropdown.Item href="#/supported">Support</Dropdown.Item> : ''}
+                            { feedback.feeling && feedback.understanding && feedback.support ? <Dropdown.Item href="#/comments">Comments</Dropdown.Item> : '' }
                             { feedback.feeling && feedback.understanding && feedback.support ?
                                 <Dropdown.Item href="#/review">Review</Dropdown.Item> :
                                 ''
