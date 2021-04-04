@@ -7,7 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-
+/**
+ * Feedback object:
+ * {
+ *  feeling: 1
+ *  understanding: 2
+ *  support: 3
+ *  comments: Lorem ipsum (not required)
+ * }
+ * clearFeedback resets feedback to an empty object
+ */
 const feedback = ( state = {}, action ) => {
     if( action.type === 'feeling' ) {
         state = {...state, feeling: action.payload };
@@ -27,6 +36,10 @@ const feedback = ( state = {}, action ) => {
     return state;
 };
 
+/**
+ * adminFeedback contains an array of feedback objects
+ * that are fetched from the database
+ */
 const adminFeedback = ( state = [], action ) => {
     if( action.type = 'addAdminFeedback' ) {
         state = [...state, action.payload];

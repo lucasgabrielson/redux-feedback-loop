@@ -9,7 +9,7 @@ const Comments = () => {
         <>
             <Header />
             <NavBar />
-            <CommentCard prompt = { 'Any comments you want to leave?' } />
+            <CommentCard />
         </>
     )
 }

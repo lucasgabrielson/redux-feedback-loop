@@ -6,30 +6,25 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import swal from 'sweetalert';
-// import 'fontsource-roboto';
 
+// create styles for MUI components
 const useStyles = makeStyles({
     root: {
-        backgroundColor: '#16C1DE',
-        marginTop: 40,
-        margin: 'auto',
-        minWidth: 275,
-        maxWidth: 500
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+        display: 'grid',
+        alignContent: 'space-around',
+        justifyContent: 'center',
+        backgroundColor: '#F8EFE4',
+        textAlign: 'center',
+        marginTop: 20,
+        marginLeft: 60,
+        marginRight: 60,
+        minHeight: 250,
+        borderRadius: 4,
+        text: 'white' 
+    }
 });
 
 const ReviewCard = () => {
@@ -40,15 +35,20 @@ const ReviewCard = () => {
     const feedback = useSelector( store => {
         return store.feedback;
     })
-
+    /**
+     * POST call to /api/feedback sending feedback object
+     * Sweetalert response on success with OK button
+     * navigating back to '/' i.e. home page
+     * On error alert user and log err to console
+     */
     const postFeedback = () => {
         console.log( 'in postFeedback' );
         axios.post( '/api/feedback', feedback )
             .then( response => {
                 console.log( 'back from POST ');
                 swal({
-                    title: "Success!",
-                    text: "Click Ok to Submit more feedback!",
+                    title: "Thank you",
+                    text: "Click OK to Submit more feedback",
                     icon: "success"
                 }).then(function() {
                     dispatch( { type: 'clearFeedback' } )
@@ -62,6 +62,11 @@ const ReviewCard = () => {
     
     return (
         <div>
+            {/* 
+                Review Card displays feedback submitted to the DOM 
+                Submit button executes POST route and if successful
+                returns user to the home page
+            */}
             <Card variant="outlined" className={classes.root}>
                 <CardContent>
                     <Typography variant="h4" component="p">
@@ -70,7 +75,7 @@ const ReviewCard = () => {
                     </Typography>
                 </CardContent>
                 <CardContent>
-                    <Typography variant="h4" component="p">
+                    <Typography variant="h6" component="p">
                         Feelings: {feedback.feeling}
                         <br />
                         Understanding: {feedback.understanding}
@@ -82,7 +87,7 @@ const ReviewCard = () => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button onClick={postFeedback} size="large">Submit</Button>
+                    <Button onClick={postFeedback} size="large" variant="outlined">Submit</Button>
                 </CardActions>
             </Card>
         </div>

@@ -11,16 +11,16 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu';
 import Grid from '@material-ui/core/Grid';
 import './Card.css'
 
+// create styles for Grid and Card components
 const useStyles = makeStyles({
     root: {
         flexGrow: 1
     },
     card: {
-        display: 'flex',
-        // flexWrap: 'wrap',
+        display: 'grid',
         alignContent: 'space-around',
         justifyContent: 'center',
-        backgroundColor: '#16C1DE',
+        backgroundColor: '#F8EFE4',
         textAlign: 'center',
         marginTop: 20,
         marginLeft: 60,
@@ -29,12 +29,15 @@ const useStyles = makeStyles({
         borderRadius: 4,
         text: 'white' 
 
-    },
-    title: {
-
     }
 });
-
+/**
+ * Function accepts three props:
+ *  type: the type of page for which the RatingCard is being used 
+ *      'feeling', 'understanding', or 'support'
+ *  next: the destination for where the Next button should bring the user
+ *  prompt: the message displayed on the DOM regarding the type of page
+ */
 const RatingCard = ( { type, next, prompt } ) => {
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -42,7 +45,12 @@ const RatingCard = ( { type, next, prompt } ) => {
     const feedback = useSelector( store => {
         return store.feedback;
     })
-
+    /**
+     * feedbackExists checks redux to see if each of the following
+     * properties is defined. If they are defined it returns true
+     * and then the Next button is conditionally rendered only
+     * once feedback has been entered.
+     */
     const feedbackExists = () => {
         switch( type ) {
             case 'feeling':
@@ -57,19 +65,21 @@ const RatingCard = ( { type, next, prompt } ) => {
 
     return (
         <div>
+            {/* 
+                Return a card with heading, dropdown menu, and ternary operator for conditionally
+                rendering the next button
+             */}
             <Grid container spacing={3}>
                 <Grid item xs={12} className = { classes.root, 'content' }>
                     <Card variant="outlined" className ={ classes.card }>
                         <CardContent>
-                            <Typography className={ classes.title } variant="h5" component="p">
+                            <Typography variant="h5" component="p">
                                 {prompt}
                                 <br />
                             </Typography>
                         </CardContent>
-                        <CardActions className='button'>
+                        <CardActions className = 'card-content'>
                             <DropDownMenu type = { type }/>
-                        </CardActions>
-                        <CardActions>
                             {feedbackExists() ? 
                                 <Link to = {next}>
                                     <Button>Next</Button>

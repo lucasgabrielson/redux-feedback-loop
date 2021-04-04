@@ -1,14 +1,14 @@
 import React from 'react';
-import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
+// make styles for the multiline comments
 const useStyles = makeStyles( theme => ( {
     root: {
         '& .MuiTextField-root': {
         margin: theme.spacing(1),
-        width: '30ch',
+        width: 'auto',
     },
     }
 }));
@@ -17,10 +17,8 @@ const CommentBox =  () => {
     const dispatch = useDispatch();
     const classes = useStyles();
 
-    const [feedback, setFeedback] = useState('');
-
+    // dispatch the comments to redux on change
     const handleChange = event => {
-        setFeedback( event.target.value );
         dispatch( { type: 'comments', payload: event.target.value})
     }
     return (
@@ -30,8 +28,7 @@ const CommentBox =  () => {
                 label="Comments"
                 onChange={handleChange}
                 multiline
-                value={feedback}
-                rows={5}
+                rows={4}
                 variant="outlined"
             />    
         </form>

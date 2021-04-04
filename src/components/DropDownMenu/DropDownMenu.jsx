@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,6 +7,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+// create styles for MUI components
 const useStyles = makeStyles( theme => ({
     formControl: {
         margin: theme.spacing(1),
@@ -21,22 +21,21 @@ const useStyles = makeStyles( theme => ({
 const DropDownMenu = ( { type } ) => {
     const dispatch = useDispatch();
     const classes = useStyles();
-    const [ feedback, setFeedback ] = useState('');
 
+    // dispatch feedback on change location dependent on type prop
     const handleChange = event => {
-        setFeedback(event.target.value);
         dispatch( { type: type, payload: event.target.value } );
     };
     return (
         <div>
             <FormControl required className={classes.formControl}>
-                <InputLabel>Rating</InputLabel>
                 <Select
-                    value={feedback}
                     onChange={handleChange}
                     className={classes.selectEmpty}
                 >
-                    <MenuItem value=""><em>None</em></MenuItem>
+                    <MenuItem value="">
+                        <em>None</em>
+                    </MenuItem>
                     <MenuItem value={1}>1</MenuItem>
                     <MenuItem value={2}>2</MenuItem>
                     <MenuItem value={3}>3</MenuItem>
