@@ -1,7 +1,3 @@
-(View Raw will give you the markdown that you can copy to your repos!)
-
-
-![MIT LICENSE](https://img.shields.io/github/license/lucasgabrielson/redux-feedback-loop.svg?style=flat-square)
 ![REPO SIZE](https://img.shields.io/github/repo-size/lucasgabrielson/redux-feedback-loop.svg?style=flat-square)
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/lucasgabrielson/redux-feedback-loop.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/lucasgabrielson/redux-feedback-loop.svg?style=social)
@@ -14,7 +10,7 @@ _Duration: 2 Days_
 
 In this project I aimed to create a web app to compile student feedback regarding daily lessons.
 
-In order to accomplish this goal I built a React single page app. I used a hash router to switch between page views and styled the app with Material UI. For each page I allowed users to continue to the next page only after feedback was given by conditionally rendering the link to the next page.
+In order to accomplish this goal I built a React single page app. I used a hash router to switch between page views and styled the app with Material UI. For each page I allowed users to continue to the next page only after feedback was given by conditionally rendering the link to the next page. I conditionally rendered the nav bar links so that users could only navigate to pages in which they had already entered feedback. After submitting their feedback I prompted users with a sweetalert allowing them to submit more feedback. In addition I made POST call and inserted the feedback into the database. 
 
 ## Screen Shot
 
