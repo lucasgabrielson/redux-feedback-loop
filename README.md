@@ -44,7 +44,6 @@ How does someone use this application? Tell a user story here.
 - React
 - Material UI
 - Bootstrap
-- Express
 - PostreSQL
 - Express
 - Axios
