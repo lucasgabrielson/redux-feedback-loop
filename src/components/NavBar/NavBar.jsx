@@ -42,9 +42,7 @@ const NavBar = () => {
                 <Toolbar>
                     <Dropdown>
                         <Dropdown.Toggle id="dropdown-basic">
-                            <IconButton edge="start" className={classes.menuButton} aria-label="menu">
-                                <MenuIcon />
-                            </IconButton>
+                            <MenuIcon />
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item href="#/">Feelings</Dropdown.Item>

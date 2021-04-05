@@ -32,6 +32,7 @@ const DropDownMenu = ( { type } ) => {
                 <Select
                     onChange={handleChange}
                     className={classes.selectEmpty}
+                    defaultValue = {""}
                 >
                     <MenuItem value="">
                         <em>None</em>
