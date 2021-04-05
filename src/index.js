@@ -36,21 +36,9 @@ const feedback = ( state = {}, action ) => {
     return state;
 };
 
-/**
- * adminFeedback contains an array of feedback objects
- * that are fetched from the database
- */
-const adminFeedback = ( state = [], action ) => {
-    if( action.type = 'addAdminFeedback' ) {
-        state = [...state, action.payload];
-    }
-    return state;
-}
-
 const store = createStore(
     combineReducers({
         feedback: feedback,
-        adminFeedback: adminFeedback,
     }),
     applyMiddleware(logger)
 );
