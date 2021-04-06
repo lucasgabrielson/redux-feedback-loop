@@ -2,7 +2,7 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/lucasgabrielson/redux-feedback-loop.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/lucasgabrielson/redux-feedback-loop.svg?style=social)
 
-# PROJECT NAME
+# Redux-Feedback-Loop
 
 ## Description
 
